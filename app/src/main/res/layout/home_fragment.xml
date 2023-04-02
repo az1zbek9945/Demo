@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+
+    <ImageView
+        android:id="@+id/sv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintEnd_toStartOf="@id/btn_add"
+        android:src="@drawable/ic_search_24"
+        />
+
+
+    <ImageView
+        android:id="@+id/btn_add"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+    <ScrollView
+        android:id="@+id/nested"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/tv_my_work"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:text="My Work"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/constraint" />
+
+            <ImageView
+                android:id="@+id/btn_point"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_ellipsis"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/constraint" />
+
+            <LinearLayout
+                android:id="@+id/ll_issues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tv_my_work">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_issues"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape"
+                    android:src="@drawable/ic_issues"
+                    android:tint="@color/white"
+                    app:contentPadding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Issues"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_issues"
+                    app:layout_constraintStart_toEndOf="@id/iv_issues"
+                    app:layout_constraintTop_toTopOf="@id/iv_issues" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_PullRequests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_issues">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_PullRequests"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape2"
+                    android:src="@drawable/ic_blue_pull_request"
+                    android:tint="@color/white"
+                    app:contentPadding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Pull Requests"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_issues"
+                    app:layout_constraintStart_toEndOf="@id/iv_issues"
+                    app:layout_constraintTop_toTopOf="@id/iv_issues" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_discussions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_PullRequests">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_discussions"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape3"
+                    android:src="@drawable/ic_chat"
+                    android:tint="@color/white"
+                    app:contentPadding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Discussions"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_issues"
+                    app:layout_constraintStart_toEndOf="@id/iv_issues"
+                    app:layout_constraintTop_toTopOf="@id/iv_issues" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_repositories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_discussions">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_repositories"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape4"
+                    android:src="@drawable/ic_repository"
+                    android:tint="@color/white"
+                    app:contentPadding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Repositories"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_issues"
+                    app:layout_constraintStart_toEndOf="@id/iv_issues"
+                    app:layout_constraintTop_toTopOf="@id/iv_issues" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_organizations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_repositories">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_organizations"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape5"
+                    android:src="@drawable/ic_organization"
+                    android:tint="@color/white"
+                    app:contentPadding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Organizations"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_issues"
+                    app:layout_constraintStart_toEndOf="@id/iv_issues"
+                    app:layout_constraintTop_toTopOf="@id/iv_issues" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Starred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_organizations">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_starred"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape6"
+                    android:src="@drawable/ic_starred"
+                    android:tint="@color/white"
+                    app:contentPadding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Starred"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_issues"
+                    app:layout_constraintStart_toEndOf="@id/iv_issues"
+                    app:layout_constraintTop_toTopOf="@id/iv_issues" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:background="#C3C8C8"
+                app:layout_constraintTop_toBottomOf="@id/ll_Starred" />
+
+            <TextView
+                android:id="@+id/tv_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Favorites"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1" />
+
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Add favorite repositories for quick access at any time, without having to search"
+                android:textAlignment="center"
+                android:textColor="#232323"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_favorite" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_fav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                android:elevation="4dp"
+                android:text="add favorites"
+                android:textColor="#FC1B64B1"
+                app:layout_constraintTop_toBottomOf="@id/tv_add" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="#C3C8C8"
+                app:layout_constraintTop_toBottomOf="@id/btn_add_fav" />
+
+            <TextView
+                android:id="@+id/tv_shortcuts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Shortcuts"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line2" />
+
+
+                <ImageView
+                    android:id="@+id/image_git"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img"
+                    app:layout_constraintTop_toBottomOf="@id/tv_shortcuts"/>
+
+                <TextView
+                    android:id="@+id/tv_tap_away"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="44dp"
+                    android:layout_marginTop="16dp"
+                    android:text="The things you need, one tap away"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toBottomOf="@id/image_git"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_fast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Fast access your lists of Issues, Pull Requests, or Discussions"
+                    android:textAlignment="center"
+                    android:textColor="#232323"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tap_away" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_started"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="24dp"
+                    android:backgroundTint="@color/white"
+                    android:elevation="4dp"
+                    android:text="get started"
+                    android:textColor="#FC1B64B1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_fast" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

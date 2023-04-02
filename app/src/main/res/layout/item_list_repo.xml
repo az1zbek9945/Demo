@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_avatar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="16dp"
+        android:padding="4dp"
+        android:src="@drawable/avatar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="az1zbek9945"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/profile_avatar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="NewsApp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/profile_avatar"
+        app:layout_constraintTop_toBottomOf="@id/tv_login" />
+
+    <TextView
+        android:id="@+id/tv_organizations"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="NewsAppdasdasdasdsadasdasdasdasdasdasdasdas"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/tv_appName"
+        app:layout_constraintTop_toBottomOf="@id/tv_appName"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/star_ic_gold"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_organizations"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_star_24"
+        />
+
+    <TextView
+        android:id="@+id/count_popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/star_ic_gold"
+        app:layout_constraintTop_toTopOf="@id/star_ic_gold"
+        app:layout_constraintBottom_toBottomOf="@id/star_ic_gold"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
